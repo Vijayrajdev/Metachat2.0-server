@@ -8,6 +8,7 @@ const socketIO = require("socket.io")(httpServer, {
     origin: "https://metachat2-0.vercel.app/",
     methods: ["GET", "POST"],
   },
+  allowEIO3: true,
 });
 
 app.use(cors());
