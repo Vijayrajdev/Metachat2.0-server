@@ -3,9 +3,10 @@ const app = express();
 const cors = require("cors");
 const http = require("http").Server(app);
 const PORT = process.env.PORT || 4000;
-const socketIO = require("socket.io")(http, {
+const socketIO = require("socket.io")(httpServer, {
   cors: {
     origin: "https://metachat2-0.vercel.app/",
+    methods: ["GET", "POST"],
   },
 });
 
