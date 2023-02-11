@@ -1,14 +1,12 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const httpServer = require("https").Server(app);
+const httpServer = require("http").Server(app);
 const PORT = process.env.PORT || 4000;
 const socketIO = require("socket.io")(httpServer, {
   cors: {
-    origin: "https://metachat2-0.vercel.app/",
-    methods: ["GET", "POST"],
+    origin: "*",
   },
-  allowEIO3: true,
 });
 
 app.use(cors());
