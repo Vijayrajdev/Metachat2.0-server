@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const http = require("http").Server(app);
+const httpServer = require("http").Server(app);
 const PORT = process.env.PORT || 4000;
 const socketIO = require("socket.io")(httpServer, {
   cors: {
@@ -38,6 +38,6 @@ app.get("/api", (req, res) => {
   res.json({ message: "Hello" });
 });
 
-http.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
