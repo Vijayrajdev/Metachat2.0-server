@@ -5,7 +5,7 @@ const http = require("http").Server(app);
 const PORT = process.env.PORT || 4000;
 const socketIO = require("socket.io")(http, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://metachat2-0.vercel.app/",
   },
 });
 
